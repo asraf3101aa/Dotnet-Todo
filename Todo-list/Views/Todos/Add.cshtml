@@ -1,0 +1,21 @@
+﻿@model Todo_list.Models.AddTodoViewModel
+@{
+}
+
+<form method="post" action="Add">
+    <div class="form-group">
+        <label for="">Todo</label>
+        <input type="text" class="form-control" asp-for="Task">
+    </div>
+    <div class="form-group">
+        <label for="">Date</label>
+        <input type="date" class="form-control" asp-for="Date">
+    </div>
+    <div class="form-group">
+        <label for="">Description</label>
+        <textarea class="form-control" asp-for="Description"></textarea>
+    </div>
+   
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

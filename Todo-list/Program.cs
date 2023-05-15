@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using Todo_list.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//Add DbContext inside our services
+builder.Services.AddDbContext<MVCTodoDbContext>(options =>
+    options.UseNpgsql(builder.Configuration
+    .GetConnectionString("MvcTodoConnectionString")));
 
 var app = builder.Build();
 

@@ -1,0 +1,25 @@
+﻿@model List<Todo_list.Models.Domain.Todo>
+@{
+}
+<h1>Todos</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Date</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var todo in Model)
+        {
+            <tr>
+                <td>@todo.Task</td>
+                <td>@todo.Date</td>
+                <td>@todo.Description</td>
+                <td><a href="Todos/View/@todo.Id">View</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>

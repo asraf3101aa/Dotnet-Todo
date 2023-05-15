@@ -1,6 +1,6 @@
-﻿namespace Todo.Models.Domain
+﻿namespace Todo_list.Models
 {
-    public class Todo
+    public class UpdateTodoViewModel
     {
         public Guid Id { get; set; }
         public string Task { get; set; }
