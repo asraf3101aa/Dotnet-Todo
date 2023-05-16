@@ -34,7 +34,7 @@ namespace Todo_list.Controllers
             {
                 Id = Guid.NewGuid(),
                 Task = addTodoRequest.Task,
-                Date = addTodoRequest.Date,
+                Date = addTodoRequest.Date.ToUniversalTime(),
                 Description = addTodoRequest.Description,
             };
 
@@ -54,9 +54,8 @@ namespace Todo_list.Controllers
                 {
                     Id = todo.Id,
                     Task = todo.Task,
-                    Date = todo.Date,
+                    Date = todo.Date.ToUniversalTime(),
                     Description = todo.Description,
-
                 };
                 return await Task.Run(() => View("View",viewModel));
 
@@ -71,7 +70,7 @@ namespace Todo_list.Controllers
             if (todo != null)
             {
                 todo.Task = model.Task;
-                todo.Date = model.Date;
+                todo.Date = model.Date.ToUniversalTime();
                 todo.Description = model.Description;
                 await mvcTodoDbContext.SaveChangesAsync();
                 return RedirectToAction("Index");

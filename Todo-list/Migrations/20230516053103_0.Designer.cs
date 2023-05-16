@@ -12,8 +12,8 @@ using Todo_list.Data;
 namespace Todo_list.Migrations
 {
     [DbContext(typeof(MVCTodoDbContext))]
-    [Migration("20230515080529_Initial Migration")]
-    partial class InitialMigration
+    [Migration("20230516053103_0")]
+    partial class _0
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,8 +34,8 @@ namespace Todo_list.Migrations
                     b.Property<bool>("Complete")
                         .HasColumnType("boolean");
 
-                    b.Property<DateOnly>("Date")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Description")
                         .IsRequired()

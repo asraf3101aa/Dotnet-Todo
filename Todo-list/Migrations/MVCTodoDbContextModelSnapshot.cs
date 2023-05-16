@@ -31,8 +31,8 @@ namespace Todo_list.Migrations
                     b.Property<bool>("Complete")
                         .HasColumnType("boolean");
 
-                    b.Property<DateOnly>("Date")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Description")
                         .IsRequired()
