@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Todo_list.Data;
 using Todo_list.Models;
@@ -6,6 +7,7 @@ using Todo_list.Models.Domain;
 
 namespace Todo_list.Controllers
 {
+    [Authorize]
     public class TodosController : Controller
     {
         private readonly MVCTodoDbContext mvcTodoDbContext;
